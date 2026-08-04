@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid design</title>
+</head>
+<style>
+    .wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+        grid-template-areas: 
+        "one one two"
+        "four three five"
+        "six six six";
+    }
+    @media (max-width:500px){
+        .wrapper{
+            grid-template-areas: 
+            "one two three"
+            "four five six";
+        }
+    }
+
+    .wrapper div{
+        background-color: pink;
+        padding: 20px;
+        text-align: center;
+        border: 3px solid red;
+        height :100px;
+    }
+    </style>
+<body>
+
+    <div class="wrapper">
+  <div style ="grid-area:one">One </div>
+  <div style ="grid-area:two">Two</div>
+  <div style ="grid-area:three">Three</div>
+  <div style ="grid-area:four">Four</div>
+  <div style ="grid-area:five">Five</div>
+  <div style ="grid-area:six">Six</div>
+</div>
+
+</body>
+</html>
