@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            background: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        .left, .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .right { border-left: 1px solid #262626; }
+
+        /* instagram gradient logo icon */
+        .ig-logo {
+            width: 70px; height: 70px;
+            border-radius: 20px;
+            background: radial-gradient(circle at 30% 107%, #fdf497, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .ig-logo::before {
+            content: ''; position: absolute; top: 50%; left: 50%;
+            width: 34px; height: 34px; border: 4px solid #fff; border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .ig-logo::after {
+            content: ''; position: absolute; top: 16px; right: 16px;
+            width: 8px; height: 8px; background: #fff; border-radius: 50%;
+        }
+
+        h1 { font-size: 42px; max-width: 420px; text-align: center; }
+        .pink {
+            background: linear-gradient(90deg, #f9ce34, #ee2a7b, #6228d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .collage { position: relative; width: 300px; height: 320px; margin-top: 30px; }
+        .collage img {
+            position: absolute; width: 170px; height: 300px;
+            object-fit: cover; border-radius: 18px; border: 6px solid #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,.6);
+        }
+        .collage img:nth-child(1) { left: 0; top: 25px; transform: rotate(-8deg); }
+        .collage img:nth-child(2) { left: 65px; top: -5px; transform: rotate(3deg); z-index: 2; }
+        .collage img:nth-child(3) { left: 130px; top: 30px; transform: rotate(10deg); }
+
+        .box { width: 340px; }
+        .box h2 { margin-bottom: 20px; }
+        input {
+            width: 100%; box-sizing: border-box;
+            padding: 16px 12px; margin-bottom: 12px;
+            background: transparent; border: 1px solid #363636;
+            border-radius: 6px; color: #fff; font-size: 14px;
+        }
+        button {
+            width: 100%; padding: 12px; margin-top: 6px;
+            border: none; border-radius: 6px; font-weight: bold; font-size: 15px; cursor: pointer;
+        }
+        #login { background: #1e4f91; color: #fff; }
+        #fb { background: #262626; color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .fb-icon {
+            width: 20px; height: 20px; background: #1877f2; border-radius: 50%;
+            color: #fff; font-size: 13px; font-weight: bold; line-height: 20px; text-align: center;
+        }
+        #signup { background: transparent; color: #4da6ff; border: 1px solid #1e4f91; margin-top: 25px; }
+        a { color: #a3a3a3; display: block; text-align: center; margin: 20px 0; text-decoration: none; font-size: 14px; }
+        .meta { margin-top: 40px; color: #a3a3a3; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <div class="ig-logo"></div>
+        <h1>See everyday moments from your <span class="pink">close friends</span>.</h1>
+        <div class="collage">
+            <img src="https://picsum.photos/300/400?random=1">
+            <img src="https://picsum.photos/300/400?random=2">
+            <img src="https://picsum.photos/300/400?random=3">
+        </div>
+    </div>
+    <div class="right">
+        <div class="box">
+            <h2>Log into Instagram</h2>
+            <form>
+                <input type="text" placeholder="Mobile number, username or email">
+                <input type="password" placeholder="Password">
+                <button id="login" type="submit">Log in</button>
+            </form>
+            <a href="#">Forgot password?</a>
+            <button id="fb"><span class="fb-icon">f</span> Log in with Facebook</button>
+            <button id="signup">Create new account</button>
+            <p class="meta">&#8734; Meta</p>
+        </div>
+    </div>
+</body>
+</html>
