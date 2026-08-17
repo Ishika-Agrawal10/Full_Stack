@@ -6,19 +6,42 @@
     <title>Gradient wheel</title>
 </head>
 <style>
-    .cointainer {
-        width: 100vw;
-        height: 100vh;
+    .container {
+        width: 250px;
+        height: 250px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: conic-gradient(red, yellow, green, blue, red);
+        background: conic-gradient(red 0% 87%, white 87% 100%);
+        border-radius: 50%;
+        border: 3px solid black;
+        
     }
+    #pp{
+        width:180px;
+        height: 180px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        border-radius: 50%;
+        background-color:white;
+        border: 3px solid black;
+    }
+   body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background-color:lightblue;
+   }
 </style>
 <body>
+    <h1 align="center">Gradient wheel</h1>
     <div class="container">
-<h1> 87%</h1>
-<p>power</p>
+        <div id="pp">
+            <h1> 87%</h1>
+            <p>power</p>
+        </div>
     </div>
 </body>
 </html>
