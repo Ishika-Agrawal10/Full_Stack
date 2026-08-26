@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        border-width: 0px 0px 3px 0px;
+        border-color:black;
+        display :block;
+        margin-top: 3%;
+        font-size: 25px;
+    }
+    input:required{
+        border-color: red;
+    }
+    input:optional{
+        border-color: blueviolet;
+    }
+    input:enabled{
+        background-color: rgb(238, 190, 219);
+    }
+    input:disabled{
+        background-color: rgb(209, 213, 147);
+    }
+    input:valid{
+        background-color:rgb(109, 109, 91) ;
+    }
+    input:invalid{
+        background-color: cadetblue;
+    }
+    input:in-range{
+        background-color: crimson;
+    }
+    input:out-of-range{                                                                                                                                                                                                                                                                                         
+        background-color: pink;
+    }
+    input:placeholder-shown{
+        outline:3px solid rgb(78, 11, 236);
+    }
+    div:has(h1){
+        width:350px;
+        background-color: rgb(238, 183, 183);
+    }
+    button{
+        height:30px;
+        width: 150px;
+        text-transform: none;
+        text-align: justify;
+        font-size: large;
+        background-color: black;
+        color:beige;
+    }
+    input:read-only{
+        border-width:0px;
+        box-shadow: 0 0 0 transparent;
+    }
+    input:focus{
+        box-shadow: 0 0 15px black;
+    }
+    li:not(:hover){
+        color:rgb(242, 242, 8);
+        font-weight: bolder;
+    }
+    body{
+        height:100vh;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+</style>
+<body>
+    <div>
+        <h1> Form detail..</h1>
+        <input type="text" placeholder="enter the First name" required/>
+        <input type="text" placeholder="enter the middle name"/>
+        <input type="text" placeholder="enter the last name"required/>
+        <input type="text" placeholder="Mathura" disabled/>
+        <input type="email" Placeholder="Enter email"/>
+        <input type="number" min="10" max="100"/>
+        <input type="text" placeholder="Miss" read-only />
+        <br>
+        <br>
+        <button>Submit</button>
+        </div>
+        <div>
+        <ol>
+            <li>box1</li>
+            <li>Ishika</li>
+            <li>Agrawal</li>
+            <li>Tea</li>
+            <li>Gehwar</li>
+            <li>hello</li>
+            <li>pen</li>
+            <li>mouse</li>
+            <li>hi</li>
+        </ol>
+    </div>
+</body>
+</html>

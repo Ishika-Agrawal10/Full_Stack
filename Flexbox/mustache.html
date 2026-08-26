@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyes and Moustache</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #f5d6b3;
+        }
+
+        /* MAIN CONTAINER */
+        .face {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+
+        /* =======================
+           EYES
+        ========================= */
+
+        .eyes {
+            position: absolute;
+
+            top: 65px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 210px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Individual eye */
+        .eye {
+            position: relative;
+
+            width: 72px;
+            height: 42px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            border: 2px solid #754c38;
+
+            overflow: hidden;
+        }
+
+        /* Pupils */
+        .eye::after {
+            content: "";
+
+            position: absolute;
+
+            width: 23px;
+            height: 23px;
+
+            background: #3b2418;
+
+            border-radius: 50%;
+
+            top: 9px;
+            left: 25px;
+
+            /* small light reflection */
+            box-shadow: inset 5px 3px 0 rgba(255,255,255,0.5);
+        }
+
+
+        /* =========================
+           MOUSTACHE
+        ========================= */
+
+        .moustache {
+            position: absolute;
+
+            top: 160px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 190px;
+            height: 65px;
+        }
+
+        /* Left + right moustache */
+        .moustache::before,
+        .moustache::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 45px;
+
+            background: #3b2418;
+
+            top: 5px;
+        }
+
+        /* Left side */
+        .moustache::before {
+            left: 0;
+
+            border-radius: 100% 0 100% 20%;
+
+            transform: rotate(8deg);
+        }
+
+        /* Right side */
+        .moustache::after {
+            right: 0;
+
+            border-radius: 0 100% 20% 100%;
+
+            transform: rotate(-8deg);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="face">
+
+        <!-- EYES -->
+        <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+        </div>
+
+        <!-- MOUSTACHE -->
+        <div class="moustache"></div>
+
+    </div>
+
+</body>
+</html>
