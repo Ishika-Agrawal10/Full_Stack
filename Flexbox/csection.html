@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All about csection---all abot combinator property</title>
+</head>
+<style>
+    section h2{
+        color:yellow;
+        text-shadow: 1px 1px 0 black;
+    }
+    section> h2{
+        text-transform: lowercase;
+    }
+    h2+p{
+        color:blue;
+    }
+    h2-p{
+        text-transform: uppercase;
+    }
+</style>
+<body>
+    <section>
+        <h2>Heading</h2>
+        <p>para</p>
+        <p>para2</p>
+        <div>
+            <h2>Heading 2</h2>
+        </div>
+    </section>
+</body>
+</html>
