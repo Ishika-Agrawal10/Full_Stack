@@ -10,11 +10,12 @@
         --primary-color:pink;
         --secondary-color:red;
         --text-size:30px;
+        --multiplier:3;
     }
     p{
         background-color: var(--primary-color);
         color:var(--secondary-color);
-        font-size:calc(var(--text-size)*2);
+        font-size:calc(var(--text-size)*var(--multiplier));
     }
 </style>
 <body>
