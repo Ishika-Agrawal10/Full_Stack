@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox task...</title>
+</head>
+<style>
+    .container {
+        flex-direction: row;
+        outline: 3px solid black;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        height: 90vh;
+        /* gap:40px; */
+    }
+    .container>div{
+        color:white;
+        height:150px;
+        width:150px; 
+        outline:3px solid black;
+        
+    }
+    #box1{
+        background-color: red;
+        border:3px solid black;
+        /* flex-basis:auto;
+         flex-grow:2;
+        flex-shrink:1; */
+        flex:10 150 px;
+    }
+    #box2{
+        background-color: blue;
+        border:3px solid black;
+        flex-grow:2;
+
+    }
+    #box3{
+        background-color: green;
+        border:3px solid black;  
+        flex-grow:3; 
+    }
+    #box1:hover{
+        background-color: yellow;
+        flex-basis:300px;
+    }
+    #box2:hover{
+        background-color: pink;
+        flex-basis:300px;
+        text-align:center;
+        text-decoration: underline;
+        color: black;
+    }
+    #box3:hover{
+        background-color: rgb(214, 13, 171);
+        flex-basis:300px;
+    }
+    h1{
+        justify-content:center;
+        text-align:center;
+        position:absolute;
+        top:0;
+        text-shadow: 2px 2px 5px black;
+        font-style: italic;
+        color:rgb(237, 152, 16);
+        text-decoration: underline;
+    }
+</style>
+<body>
+     
+    <div class="container">
+       <h1>Flexbox Task</h1>
+        <div id="box1">box1</div>
+        <div id="box2">box2</div>
+        <div id="box3">box3</div>
+    </div>
+</body>
+</html>

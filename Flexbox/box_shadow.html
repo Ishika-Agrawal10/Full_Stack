@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* .container{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:90vh;
+        background-color:burlywood;
+
+    } */
+
+    .container{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:90vh;
+        gap:50px;
+    }
+
+    h1{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:150px;
+        width:150px;
+        margin:0;
+        border:6px solid white;
+        text-align:center;
+    }
+    /* h1:hover{
+        
+        box-shadow: 10px 10px 5px rgb(239, 27, 193);
+    } */
+     h1:hover{
+        box-shadow:
+    0 0 20px rgb(236, 44, 44),
+    0 0 40px rgb(244, 3, 200),
+    inset 0 0 20px rgba(11, 223, 82, 0.5);
+    /* transition: 0.4s; */
+     }
+     #box{
+        font-weight:bold;
+        font-size:30px;
+        height:100px;
+        width:100px;
+        display:flex;
+        justify-content:center; 
+        align-items:center;
+        padding:80px;
+        border:3px solid white;
+        border-radius: 50%;
+     }
+     #box:hover{
+        box-shadow:0 0 20px blue, 
+        0 0 50px rgb(231, 8, 45)
+        ,inset 0 0 20px green;
+     }
+</style>
+<body>
+    <div class="container">
+        <h1> Ishika agrawal</h1>
+        <div id="box">
+            Lovely box shadow effect
+        </div>
+    </div>
+</body>
+</html>

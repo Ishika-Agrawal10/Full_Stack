@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photo gallery</title>
+</head>
+<style>
+     .container {
+        height:auto;
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit,minmax(30px, 1fr));  */
+            /* gap: 3%;
+            padding: 30px; */
+            grid-template-areas: 
+            "box1 box2 box3"
+            "box4 box5 box6"
+            "box7 box8 box9"
+            "box10 box11 box12";
+            /* border: 3px solid rgb(248, 139, 219);
+            box-shadow: 0px 0px 10px #161313;
+            border-radius:12px; */
+            background-color: aquamarine;
+        }
+    .box{
+            height: 100px;
+            width: 100px;
+            background: rgb(242, 139, 219);
+            border: 3px solid #161313;
+            padding: 10px;
+            text-align: center;
+        }
+</style>
+<body>
+    <div class="container">
+         <div class="container">
+        <div class="box" style="grid-area: box1">Box 1</div>
+        <div class="box" style="grid-area: box2">Box 2</div>
+        <div class="box" style="grid-area: box3">Box 3</div>
+        <div class="box" style="grid-area: box4">Box 4</div>   
+        <div class="box" style="grid-area: box5">Box 5</div>
+        <div class="box" style="grid-area: box6">Box 6</div>
+        <div class="box" style="grid-area: box7">Box 7</div>
+        <div class="box" style="grid-area: box8">Box 8</div>
+        <div class="box" style="grid-area: box9">Box 9</div>
+        <div class="box" style="grid-area: box10">Box 10</div>
+        <div class="box" style="grid-area: box11">Box 11</div>
+        <div class="box" style="grid-area: box12">Box 12</div>
+    </div>
+    </div>
+</body>
+</html>
