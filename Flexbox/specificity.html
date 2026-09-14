@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @layer base,special;
+    @layer base{
+        body{
+            background-color: rgb(246, 168, 204);
+        }
+    p{
+        font-size:30px;
+        color:rgb(1, 19, 9);
+    }
+    /* button{
+        background-color: rgb(247, 76, 104);
+        height:250px;
+        width:250px;
+        border-radius: 50%;
+        font-size: larger;
+    } */
+     button {
+    background-color: rgb(247, 76, 104);
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+
+    border: 5px solid white;
+    box-shadow: 
+        0 0 10px white,
+        0 0 20px rgb(247, 76, 104),
+        0 0 40px rgb(231, 239, 8);
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+}
+@layer special{
+    p{
+        color:blue;
+    }
+}
+</style>
+<body>
+    <p>Specificity</p>
+    <button>Click me..!!</button>
+</body>
+</html>
