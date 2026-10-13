@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TilePress - Masonry Gallery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        /* ================= NAVBAR ================= */
+        .navbar {
+            height: 65px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .search {
+            width: 40%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .icon {
+            font-size: 20px;
+        }
+        .profile {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* ================= GALLERY ================= */
+        .gallery {
+            width: 100%;
+            max-width: 1250px;
+            margin: 25px auto;
+            padding: 0 15px;
+            display: grid;
+            /* Desktop: automatically creates columns */
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            /* Small base row */
+            grid-auto-rows: 8px;
+            gap: 16px;
+        }
+        /* ================= CARD ================= */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        /* Image / colored placeholder */
+        .image {
+            width: 100%;
+            flex: 1;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /* Card title */
+        .title {
+            padding: 10px 12px 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        /* Card footer */
+        .footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 12px 10px;
+            font-size: 12px;
+            color: #666;
+        }
+        .avatar {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+        /* ================= HEIGHTS ================= */
+
+        .small {
+            grid-row: span 28;
+        }
+
+        .medium {
+            grid-row: span 38;
+        }
+
+        .large {
+            grid-row: span 50;
+        }
+
+        .extra-large {
+            grid-row: span 62;
+        }
+        /* ================= COLORS ================= */
+
+        .pink {
+            background-color: #e98b8b;
+        }
+
+        .green {
+            background-color: #35c96b;
+        }
+
+        .yellow {
+            background-color: #e8d75c;
+        }
+
+        .blue {
+            background-color: #4d8fd1;
+        }
+
+        .purple {
+            background-color: #b783c7;
+        }
+
+        .orange {
+            background-color: #efa45f;
+        }
+
+        .teal {
+            background-color: #208b91;
+        }
+
+        .red {
+            background-color: #d95c6d;
+        }
+
+        .lavender {
+            background-color: #b9a9d8;
+        }
+
+        .peach {
+            background-color: #e7a58e;
+        }
+
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 1199px) {
+
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .search {
+                width: 30%;
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 699px) {
+
+            .navbar {
+                padding: 10px 15px;
+            }
+
+            .search {
+                display: none;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 8px;
+
+                padding: 0 10px;
+            }
+
+            .nav-right {
+                gap: 8px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            TilePress
+        </div>
+
+
+        <input
+            type="text"
+            class="search"
+            placeholder="Search pins..."
+        >
+
+
+        <div class="nav-right">
+
+            <span class="icon">♡</span>
+
+            <span class="icon">🔔</span>
+
+            <div class="profile">
+                👤
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <main class="gallery">
+
+
+        <!-- Card 1 -->
+
+        <div class="card large">
+
+            <div class="image pink">
+                Pin 1
+            </div>
+
+            <div class="title">
+                Autumn cabin mood board
+            </div>
+
+            <div class="footer">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <span>
+                    @alex
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Card 2 -->
+
+        <div class="card extra-large">
+
+            <div class="image lavender">
+                Pin 2
+            </div>
+
+            <div class="title">
+                Minimal desk setup
+            </div>
+
+            <div class="footer">
+
+                <div class="avatar">
+                    M
+                </div>
+
+                <span>
+                    @minimal
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Card 3 -->
+
+        <div class="card extra-large">
+
+            <div class="image orange">
+                Pin 3
+            </div>
+
+            <div class="title">
+                Terracotta kitchen renovation before and after
+            </div>
+
+            <div class="footer">
+
+                <div class="avatar">
+                    T
+                </div>
+
+                <span>
+                    @terra
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Card 4 -->
+
+        <div class="card small">
+
+            <div class="image lavender">
+                Pin 4
+            </div>
+
+            <div class="title">
+                Lavender field wallpaper
+            </div>
+
+            <div class="footer">
+
+                <div class="avatar">
+                    L
+                </div>
+
+                <span>
+                    @lavender
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Card 5 -->
+
+        <div class="card extra-large">
+
+            <div class="image peach">
+                Pin 5
+            </div>
+
+            <div class="title">
+                Sunset gradient nail art ideas
+            </div>
+
+            <div class="footer">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <span>
+                    @sunset
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Card 6 -->
+
+        <div class="card medium">
+
+            <div class="image green">
+                Pin 6
+            </div>
+
+            <div class="title">
+                Balcony herb garden layout
+            </div>
+
+            <div class="footer">
+
+                <div class="avatar">
+                    B
+                </div>
+
+                <span>
+                    @balcony
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Card 7 -->
+
+        <div class="card large">
+
+            <div class="image blue">
+                Pin 7
+            </div>
+
+            <div class="title">
+                Deep-sea color palette
+            </div>
+
+            <div class="footer">
+
+                <div class="avatar">
+                    D
+                </div>
+
+                <span>
+                    @deepsea
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Card 8 -->
+
+        <div class="card extra-large">
+
+            <div class="image red">
+                Pin 8
+            </div>
+
+            <div class="title">
+                Scandi living room inspiration
+            </div>
+
+            <div class="footer">
+
+                <div class="avatar">
+                    S
+                </div>
+
+                <span>
+                    @scandi
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Card 9 -->
+
+        <div class="card medium">
+
+            <div class="image yellow">
+                Pin 9
+            </div>
+
+            <div class="title">
+                Modern workspace ideas
+            </div>
+            <div class="footer">
+                <div class="avatar">
+                    W
+                </div>
+                <span>
+                    @workspace
+                </span>
+            </div>
+        </div>
+        <!-- Card 10 -->
+        <div class="card large">
+            <div class="image teal">
+                Pin 10
+            </div>
+            <div class="title">
+                Ocean inspired bedroom
+            </div>
+            <div class="footer">
+                <div class="avatar">
+                    O
+                </div>
+                <span>
+                    @ocean
+                </span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

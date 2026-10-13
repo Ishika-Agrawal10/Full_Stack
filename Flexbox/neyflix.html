@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive movie browser</title>
+</head>
+<style>
+    *{
+        box-sizing:border-box;
+    }
+    body{
+        margin:0;
+        padding :0;
+        background-color:black;
+    }
+    .c{
+        background-color:black;
+        width:100%;
+        min-height:100vh;
+    }
+    h1{
+        color:white;
+        font-size:45px;
+    }
+    p{
+        color:white;
+    }
+    button{
+        display:flex;
+        gap:10px;
+        width:90px;
+        height:25px;
+    }
+    h2{
+        color:white;
+        font-size:20px;
+    }
+    .movie{
+        display:flex;
+        flex-direction:row;
+        overflow-x:auto;
+        gap:10px;
+        flex-wrap:nowrap; 
+    }
+    .box{
+        height:150px;
+        width:200px;
+        background-color:pink;
+        flex-shrink:0;
+        align-content:flex-end;
+        border-radius:2px;
+    }
+    .b1{
+        background-color:blue;
+
+    }
+    .b2{
+        background-color:yellow;
+    }
+    .b3{
+        background-color:violet;
+    }
+    .b4{
+        background-color:cyan;
+    }
+    .b5{
+        background-color:green;
+    }
+    .b7{
+        background-color:brown;
+    }
+    .b8{
+        background-color:aqua;
+    }
+    .a{
+        background-color:beige;
+    }
+    .b{
+        background-color:blueviolet;
+    }
+    @media (max-width:1023px){
+        .c {
+                padding: 35px 30px;
+            }
+            h1 {
+                font-size: 40px;
+            }
+
+            .box {
+                width: 150px;
+            }
+    }
+    @media (max-width:600px){
+        .c{
+            padding:25px 20px;
+        }
+        h1{
+            font-size:30px;
+        }
+        p{
+            font-size:12px;
+        }
+        .movie {
+                flex-direction: row;
+                overflow-x: auto;
+            }
+        .box{
+            width:150px;
+        }
+    }
+
+</style>
+<body>
+
+    <div class="c">
+        <h1>Midnight Horizon</h1>
+        <p>A stranded astronaut must choose between saving her crew or completing
+             humanity's last mission before the signal fades forever.</p>
+             <button>Play</button>
+             <button>More info</button>
+             <h2> Trending now</h2>
+             <div class="movie">
+                <div class="box b1">neon Drift</div>
+                <div class="box b2">Silent Harbor</div>
+                <div class="box b3">Echo Chamber</div>
+                <div class="box b4">Last LIght</div>
+                <div class="box b5">Glass city</div>
+                <div class="box b6">The long drift</div>
+                <div class="box b7">the Avengers</div>
+                <div class="box b8">Harry potter</div>
+             </div>
+             <h2>Continue Watching</h2>
+             <div class="movie">
+             <div class="box a">Echo chamber</div>
+             <div class="box b">Glass city</div>
+             <div class="box cc">Neon Drift</div>
+             <div class="box d">WildFIre</div>
+             <div class="box e">my love</div>
+             <div class="box f">helo</div>
+             <div class="box g">Silent Harbor</div>
+             <div class="box h">The Long dark</div>
+             </div>
+             <h2>Action Movies</h2>
+             <div class="movie">
+                <div class="box aa">Echo chamber</div>
+             <div class="box ab">Glass city</div>
+             <div class="box ac">Neon Drift</div>
+             <div class="box ad">WildFIre</div>
+             <div class="box ae">my love</div>
+             <div class="box af">helo</div>
+             <div class="box ag">Silent Harbor</div>
+             <div class="box ah">The Long dark</div>
+             </div>
+
+    </div>
+</body>
+</html>

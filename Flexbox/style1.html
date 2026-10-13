@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netflix style responsive navbar</title>
+</head>
+<style>
+    *{
+        box-sizing:border-box;
+    }
+    body{
+        margin:0;
+        padding :0;
+        background-color:black;
+    }
+    .con{
+        padding:0px;
+        margin:0px;
+        background-color:linear-gradient(to right, black,red);
+        width:100%;
+        min-height:200vh;
+    }
+    h1{
+        color:white;
+        font-size:45px;
+    }
+    p{
+        color:white;
+        font-size:25px;
+    }
+    button{
+        width:90px;
+        height:40px;
+    }
+    .buttons:hover{
+        cursor: pointer;
+       
+    }
+    .movie{
+        display:flex;
+        flex-direction:row;
+        overflow-x:auto;
+        gap:10px;
+        padding:3px;
+        margin:3px;
+        width:100%;
+        flex-wrap:nowrap;
+    }
+    h2{
+        color:white;
+        background-color:black;
+        font-size:26px;
+    }
+    .box{
+        height:150px;
+        width:200px;
+        flex-shrink:0;
+        display:flex;
+        
+        font-weight:bold;
+        font-size:18px;
+        align-items:flex-end;
+        transition:transform 0.3s ease;
+    }
+    .box:hover{
+        transform:scale(1.07);
+    }
+    .b1{
+        background-color:pink;
+    }
+    .b2{
+        background-color:yellow;
+    }
+    .b3{
+        background-color:violet;
+    }
+    .b4{
+        background-color:purple;
+    }
+    .b5{
+        background-color:brown;
+    }
+    .b6{
+        background-color:aquamarine;
+    }
+    .b7{
+        background-color:blanchedalmond;
+    }
+    .b8{
+        background-color:orange;
+    }
+    .bb1{
+        background-color:blue;
+    }
+    .bb2{
+        background-color:pink;
+    }
+    .bb3{
+        background-color:orange;
+    }
+    .bb4{
+        background-color:white;
+    }
+    .bb5{
+        background-color:red;
+    }
+    .bb6{
+        background-color:green;
+    }
+    .bb7{
+        background-color:beige;
+    }
+    .bb8{
+        background-color:aqua;
+    }
+    @media (min-width:600px) and (max-width:1023px) {
+        .box{
+            width:150px;
+        }
+    }
+    @media (max-width:600px) {
+        .box{
+            width:110px;
+        }
+        h1{
+            font-size:30px;
+        }
+        p{
+            font-size:18px;
+        }
+    }
+
+
+</style>
+<body>
+    <section>
+        <div class="con">
+            <h1>Midnight Horizon</h1>
+            <p>a stranded astronaut must choose between saving her crew or completing <br>
+                 humanity's last mission before the signal fades forever.</p>
+            <div class="buttons">
+                <button>play</button>
+                <button>more info</button>
+            </div>
+       
+    
+        <h2> trending Now</h2>
+        <div class="movie">
+            <div class="box b1">Neon Drift</div>
+            <div class="box b2">Silent Harbour</div>
+            <div class="box b3">Echo Chamber</div>
+            <div class="box b4">Last lIght</div>
+            <div class="box b5">Glass city</div>
+            <div class="box b6">The long Dark</div>
+            <div class="box b7">Avengers</div>
+            <div class="box b8">Harry Potter</div>
+        </div>
+    
+        <h2> Continue Watching</h2>
+        <div class="movie">
+        <div class="box bb1">Echo Chamber</div>
+        <div class="box bb2">Glass city</div>
+        <div class="box bb3">Neon drift</div>
+        <div class="box bb4">WildFire</div>
+        <div class="box bb5">Silent Harbour</div>
+        <div class="box bb6">The long Dark</div>
+        <div class="box bb8">the hello</div>
+        </div>
+    
+    
+        <h2>Action Movie</h2>
+        <div class="movie">
+            <div class="box b1">Lat Night</div>
+            <div class="box b2">paper moon</div>
+            <div class="box b3">The long darft</div>
+            <div class="box b4">Silent harbor</div>
+            <div class="box b5">Neon Drift</div>
+            <div class="box b6">Action thrill</div>
+            <div class="box b7">wildlife</div>
+            <div class="box b8">Rangoon</div>
+        </div>
+         </div>
+    
+  
+    </body>
+</body>
+</html>

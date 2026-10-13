@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamGrid</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            padding: 45px 50px;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            width: 100%;
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 0 0 15px 0;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 14px;
+            max-width: 500px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 9px 16px;
+            border: none;
+            border-radius: 2px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .play {
+            background-color: white;
+            color: black;
+        }
+
+        .info {
+            background-color: #444;
+            color: white;
+        }
+
+
+        /* MOVIE SECTION */
+
+        .movie-section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+
+        /* MOVIE ROW */
+
+        .movie-row {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            padding-bottom: 8px;
+        }
+
+
+        /* MOVIE CARD */
+
+        .card {
+            width: 200px;
+            height: 110px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 10px;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+
+
+        /* CARD COLORS */
+
+        .card1 {
+            background-color: #c65b8c;
+        }
+
+        .card2 {
+            background-color: #173b45;
+        }
+
+        .card3 {
+            background-color: #e8a91c;
+            color: black;
+        }
+
+        .card4 {
+            background-color: #1471b8;
+        }
+
+        .card5 {
+            background-color: #df6262;
+        }
+
+        .card6 {
+            background-color: #172b34;
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 1023px) {
+
+            .container {
+                padding: 35px 30px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .card {
+                width: 150px;
+            }
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 25px 15px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            .card {
+                width: 110px;
+                height: 90px;
+                font-size: 10px;
+            }
+
+            .movie-row {
+                flex-direction: row;
+                overflow-x: auto;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- HERO -->
+
+        <div class="hero">
+
+            <h1>Midnight Horizon</h1>
+
+            <p>
+                A stranded astronaut must choose between saving her crew
+                or completing humanity's last mission before the signal
+                fades forever.
+            </p>
+
+            <div class="buttons">
+                <button class="play">▶ Play</button>
+                <button class="info">ⓘ More Info</button>
+            </div>
+
+        </div>
+
+
+        <!-- TRENDING NOW -->
+
+        <div class="movie-section">
+
+            <h2>Trending Now</h2>
+
+            <div class="movie-row">
+
+                <div class="card card1">Neon Drift</div>
+
+                <div class="card card2">Silent Harbor</div>
+
+                <div class="card card3">Echo Chamber</div>
+
+                <div class="card card4">Last Light</div>
+
+                <div class="card card5">Glass City</div>
+
+                <div class="card card6">The Long Dark</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTINUE WATCHING -->
+
+        <div class="movie-section">
+
+            <h2>Continue Watching</h2>
+
+            <div class="movie-row">
+
+                <div class="card card3">Echo Chamber</div>
+
+                <div class="card card5">Glass City</div>
+
+                <div class="card card1">Neon Drift</div>
+
+                <div class="card card4">Wildfire</div>
+
+                <div class="card card6">Silent Harbor</div>
+
+                <div class="card card2">The Long Dark</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

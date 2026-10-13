@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile layout expensive design</title>
+</head>
+<style>
+    *{
+        box-sizing:border-box;
+    }
+    body{
+        margin:0;
+        padding:20px;
+        font-family:Arial,sans-serif;
+    }
+    .navbar{
+        width:100%;
+        border:1px solid black;
+        height:65px;
+        background-color:rgb(242, 245, 246);
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        align-content:center;
+        position:sticky;
+        top:0;
+        z-index:10px;
+    }
+    .logo{
+        font-size:30px;
+        font-weight:bold;
+        padding-left:20px;
+    }
+    .search{
+        width:50%;
+        height:50px;
+        border:3px solid black;
+        padding:10px 15px;
+        border-radius:20px;
+    }
+    .search input{
+        height:100%;
+        width:100%;
+        align-content:center;
+
+        padding:5px 5px;
+        border-radius:8px;
+    }
+    .icons{
+        gap:10px;
+        display:flex;
+        
+    }
+
+    .container{
+        margin:20px auto;
+        display:grid;
+        background-color:rgb(245, 238, 239);
+        grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+        border-radius:8px;
+        gap:10px;
+        grid-auto-rows:8px;
+        
+    }
+    .card{
+        border-radius:8px;
+        background-color:rgb(150, 150, 241);
+       
+    }
+    .card1{
+        grid-row:span 30;
+        background-color:pink;
+    }
+    .card2{
+        background-color:purple;
+        grid-row:span 40;
+    }
+    .card3{
+        background-color:red;
+        grid-row:span 35;
+    }
+    .card4{
+        background-color:green;
+        grid-row:span 35;
+    }
+    .card5{
+        background-color:yellow;
+        grid-row:span 30;
+    }
+    .card6{
+        background-color:orange;
+        grid-row:span 30;
+    }
+    .card7{
+        background-color:blue;
+        grid-row:span 30;
+    }
+    .card8{
+        background-color:lightblue;
+        grid-row:span 30;
+    }
+    .card9{
+        background-color:lightgreen;
+        grid-row:span 30;
+    }
+    .card10{
+        background-color:cyan;
+        grid-row:span 30;
+    }
+    .footer{
+        align-items:flex-end;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            TilePress
+        </div>
+        <div class="search">
+        <input type="text" placeholder="Search..." height="100%",wigth="100%">
+        </div>
+        <div class="icons">
+            <input type="button" value="🔔">
+            <input type="button" value="👱">
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="card card1">
+            <div class="footer">
+                Autumn cabin mood board
+            </div>
+        </div>
+        <div class="card card2"></div>
+        <div class="card card3"></div>      
+        <div class="card card4"></div>
+        <div class="card card5"></div>
+        <div class="card card6"></div>
+        <div class="card card7"></div>
+        <div class="card card8"></div>
+        <div class="card card9"></div>
+        <div class="card card10"></div>
+    </div>
+    
+</body>
+</html>

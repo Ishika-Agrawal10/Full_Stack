@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin:0;
+        background-color:black;
+    }
+    .container{
+        background-color:black;
+        width:100%;
+        min-height:100vh;
+    }
+    h1{
+        font-size:50px;
+        color:white;
+    }
+    p{
+        
+        color:white;
+    }
+    button{
+        width:90px;
+        height:30px;
+    }
+    h2{
+        font-size:5;
+        color:white;
+    }
+    .main{
+        display:flex;
+       
+    }
+    .box{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        gap:10px;
+       overflow-x:auto;
+        flex-shrink: 0;
+    }
+    .box1,.box2,.box3,.box4,.box5,.box6{
+         width:200px;
+        height:180px;
+
+    }
+    .box1{
+        background-color:pink;
+    }
+    .box2{
+        background-color:red;
+    }
+    .box3{
+        background-color:violet;
+    }
+    .box4{
+        background-color:blanchedalmond;
+    }
+    .box5{
+        background-color:aquamarine;
+    }
+    .box6{
+        background-color:aqua;
+    }
+    
+      .i1,.i2,.i3,.i4,.i5,.i6{
+        width:200px;
+        height:180px;
+
+    }
+    .i1 {
+    background-color: blue;
+}
+
+.i2 {
+    background-color: pink;
+}
+
+.i3 {
+    background-color: yellow;
+}
+
+.i4 {
+    background-color: green;
+}
+
+.i5 {
+    background-color: darkgreen;
+}
+
+.i6 {
+    background-color: cyan;
+}
+  
+
+</style>
+<body>
+    <div class="container">
+        <h1>Midnight Horizon</h1>
+        <p> A stranded astronaut must choose between saving her crew or completing humanity's last mission before the signal fades forever</p>
+
+    <div class="class">
+        <button>Play Now</button>
+        <button> More Info</button>
+    </div>
+        <h2>Trending Now</h2>
+        <div class="main">
+            <div class ="box">
+                <div class="box1">Neon Drift</div>
+                <div class="box2">Silent Harbar</div>
+                <div class="box3">Echo Chamber</div>
+                <div class="box4">LastLight</div>
+                <div class="box5">Glass City</div>
+                <div class="box6">The Long Dark</div>
+                
+            </div>
+        </div>
+        <h2>Continue Watching</h2>
+        <div class="main2">
+            <div class="box">
+                <div class="i1">Echo Chamber</div>
+                <div class="i2">Glass City</div>
+                <div class="i3">Neon Drift</div>
+                <div class="i4">WildFire</div>
+                <div class="i5">Silent Harbour</div>
+                <div class="i6">The long Dark</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
