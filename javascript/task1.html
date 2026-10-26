@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Quiz</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin: 50px;
+        }
+        .progress {
+            background: lightgray;
+            height: 10px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        #bar {
+            background: rgb(1, 50, 15);
+            height: 10px;
+            width: 0%;
+            border-radius: 10px;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 250px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>JavaScript Quiz Arena</h2>
+    <p id="progressText">Q1/1</p>
+    <div class="progress">
+        <div id="bar"></div>
+    </div>
+    <p id="score">Score: 0</p>
+    <h3>Which keyword is used to declare a variable in JavaScript?</h3>
+    <button onclick="checkAnswer('var')">A. var</button>
+    <button onclick="checkAnswer('int')">B. int</button>
+    <button onclick="checkAnswer('define')">C. define</button>
+    <button onclick="checkAnswer('print')">D. print</button>
+
+    <p id="result"></p>
+
+    <script src="task1.js"></script>
+
+</body>
+</html>
