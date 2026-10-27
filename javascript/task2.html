@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Number</title>
+</head>
+<body>
+<h2>Guess the Number (1 to 100)</h2>
+<input type="number" id="guess" placeholder="Enter number">
+<button onclick="check()">Guess</button>
+<p id="result"></p>
+<p id="attempts"></p>
+<script>
+let number = Math.floor(Math.random() * 100) + 1;
+let count = 0;
+function check() {
+    let guess = Number(document.getElementById("guess").value);
+    let result = document.getElementById("result");
+    if (document.getElementById("guess").value === "" || guess < 1 || guess > 100) {
+        result.innerHTML = "Enter number between 1 and 100";
+        return;
+    }
+    count++;
+    if (guess === number) {
+        result.innerHTML = "Correct! You won!";
+    } 
+    else if (count === 7) {
+        result.innerHTML = "Game Over! Number was " + number;
+    } 
+    else if (guess < number) {
+        result.innerHTML = "low! Try bigger number";
+    } 
+    else {
+        result.innerHTML = "high! Try smaller number";
+    }
+    document.getElementById("attempts").innerHTML =
+        "Chances left: " + (7 - count);
+    if (guess === number || count === 7) {
+        document.querySelector("button").disabled = true;
+    }
+}
+</script>
+</body>
+</html>
