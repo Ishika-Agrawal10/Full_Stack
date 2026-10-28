@@ -1,0 +1,52 @@
+<html>
+<body>
+<h2>Reaction Timer</h2>
+
+<button id="box" onclick="clickBox()">Start Game</button>
+
+<p id="result"></p>
+<p id="best"></p>
+
+<script>
+let start;
+let timer;
+let waiting = false;
+let best = localStorage.getItem("best") || 0;
+
+document.getElementById("best").innerHTML = "Best Time: " + best + " ms";
+
+function clickBox() {
+    if (waiting) {
+        let time = Date.now() - start;
+        document.getElementById("result").innerHTML = "Your Time: " + time + " ms";
+
+        if (best == 0 || time < best) {
+            best = time;
+            localStorage.setItem("best", best);
+            document.getElementById("best").innerHTML = "Best Time: " + best + " ms";
+        }
+
+        waiting = false;
+        document.getElementById("box").innerHTML = "Play Again";
+        document.getElementById("box").style.backgroundColor = "white";
+    } else {
+        clearTimeout(timer);
+        waiting = false;
+
+        document.getElementById("result").innerHTML = "Wait for Green!";
+        document.getElementById("box").innerHTML = "Wait...";
+        document.getElementById("box").style.backgroundColor = "red";
+
+        let delay = Math.floor(Math.random() * 3000) + 2000;
+
+        timer = setTimeout(function() {
+            document.getElementById("box").style.backgroundColor = "green";
+            document.getElementById("box").innerHTML = "CLICK NOW!";
+            start = Date.now();
+            waiting = true;
+        }, delay);
+    }
+}
+</script>
+</body>
+</html>
