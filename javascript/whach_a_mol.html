@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Whack a Mole</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            gap: 10px;
+        }
+        .cell {
+            height: 80px;
+            background: lightgray;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .active {
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<h2>Whack a Mole</h2>
+<h3>Score: <span id="score">0</span></h3>
+<h3>Time: <span id="time">30</span></h3>
+
+<div class="grid" id="grid"></div>
+<button onclick="startGame()">Start Game</button>
+
+<script>
+let score = 0;
+let time = 30;
+let mole;
+let game;
+let timer;
+let running = false;
+
+let grid = document.getElementById("grid");
+
+for (let i = 0; i < 9; i++) {
+    let cell = document.createElement("button");
+    cell.className = "cell";
+    cell.onclick = function () {
+        if (running && cell === mole) {
+            score++;
+            document.getElementById("score").innerHTML = score;
+            cell.classList.remove("active");
+            mole = null;
+        }
+    };
+    grid.appendChild(cell);
+}
+
+let cells = document.querySelectorAll(".cell");
+
+function showMole() {
+    cells.forEach(cell => cell.classList.remove("active"));
+
+    let random = Math.floor(Math.random() * 9);
+    mole = cells[random];
+    mole.classList.add("active");
+}
+
+function startGame() {
+    clearInterval(game);
+    clearInterval(timer);
+
+    score = 0;
+    time = 30;
+    running = true;
+    mole = null;
+
+    document.getElementById("score").innerHTML = score;
+    document.getElementById("time").innerHTML = time;
+
+    showMole();
+
+    game = setInterval(showMole, 800);
+
+    timer = setInterval(function () {
+        time--;
+        document.getElementById("time").innerHTML = time;
+
+        if (time === 0) {
+            clearInterval(game);
+            clearInterval(timer);
+            running = false;
+            cells.forEach(cell => cell.classList.remove("active"));
+            mole = null;
+            alert("Game Over! Score: " + score);
+        }
+    }, 1000);
+}
+</script>
+
+</body>
+</html>
