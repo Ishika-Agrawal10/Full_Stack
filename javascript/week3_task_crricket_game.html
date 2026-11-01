@@ -1,0 +1,193 @@
+<html>
+<head>
+    <title>Last Over Cricket Game</title>
+    <style>
+        body { font-family: Arial; text-align: center; background: #eaf7e9; }
+        .game { background: white; margin: 30px auto; padding: 20px; max-width: 600px; }
+        .pitch { background: rgb(196, 63, 230); height: 100px; margin: 20px 0; position: relative; }
+        #ball { position: absolute; left: 5%; top: 35px; font-size: 25px; }
+        #zone { position: absolute; left: 75%; top: 25px; border: 2px dashed green; padding: 10px; }
+        button { padding: 10px 20px; margin: 8px; cursor: pointer; }
+        .score { display: flex; justify-content: space-around; }
+    </style>
+</head>
+
+<body>
+
+<div class="game">
+    <h1>🏏 Last Over</h1>
+
+    <button onclick="setDifficulty(2,8)">Easy</button>
+    <button onclick="setDifficulty(3,12)">Medium</button>
+    <button onclick="setDifficulty(4,15)">Hard</button>
+
+    <div class="score">
+        <h3>Need: <span id="need">12</span></h3>
+        <h3>Balls: <span id="balls">6</span></h3>
+        <h3>Wickets: <span id="wickets">0</span>/2</h3>
+    </div>
+
+    <div class="pitch">
+        <span id="ball">🔴</span>
+        <span id="zone">HIT</span>
+    </div>
+
+    <h3>This Over</h3>
+    <p id="over">- - - - - -</p>
+
+    <h3 id="message">Press HIT when ball reaches the zone!</h3>
+
+    <button onclick="hit()">HIT 🏏</button>
+    <button onclick="restart()">Play Again</button>
+
+    <h3 id="result"></h3>
+    <h4>Best Finish: <span id="best">None</span></h4>
+</div>
+
+<script>
+let target = 12, runs = 0, balls = 6, wickets = 0;
+let speed = 3, position = 5, timer, active = false;
+let results = [];
+
+function setDifficulty(s, t) {
+    speed = s;
+    target = t;
+    restart();
+}
+
+function startBall() {
+    if (balls == 0 || wickets == 2 || runs >= target) {
+        endGame();
+        return;
+    }
+
+    position = 5;
+    active = true;
+    document.getElementById("ball").style.left = position + "%";
+
+    clearInterval(timer);
+
+    timer = setInterval(function() {
+        position += speed;
+
+        document.getElementById("ball").style.left = position + "%";
+
+        if (position >= 95) {
+            clearInterval(timer);
+            active = false;
+
+            let outcome = Math.random() < 0.3 ? "W" : 0;
+            playBall(outcome);
+        }
+    }, 100);
+}
+
+function hit() {
+    if (!active) return;
+
+    clearInterval(timer);
+    active = false;
+
+    let distance = Math.abs(position - 75);
+    let score;
+
+    if (distance <= 5) score = 6;
+    else if (distance <= 15) score = 4;
+    else if (distance <= 25) score = 1;
+    else score = Math.random() < 0.3 ? "W" : 0;
+
+    playBall(score);
+}
+
+function playBall(score) {
+    balls--;
+
+    if (score == "W") {
+        wickets++;
+        document.getElementById("message").innerText = "OUT! Wicket lost!";
+    } else {
+        runs += score;
+
+        let comments = {
+            6: "SIX! Amazing shot!",
+            4: "FOUR! Beautiful boundary!",
+            1: "Good running! One run!",
+            0: "Dot ball! No runs!"
+        };
+
+        document.getElementById("message").innerText = comments[score];
+    }
+
+    results.push(score);
+    document.getElementById("over").innerText = results.join(" | ");
+
+    document.getElementById("need").innerText = Math.max(0, target - runs);
+    document.getElementById("balls").innerText = balls;
+    document.getElementById("wickets").innerText = wickets;
+
+    if (runs >= target || balls == 0 || wickets == 2) {
+        endGame();
+    } else {
+        setTimeout(startBall, 1000);
+    }
+}
+
+function endGame() {
+    clearInterval(timer);
+    active = false;
+
+    if (runs >= target) {
+        document.getElementById("result").innerText = "🏆 YOU WON!";
+        
+        let best = localStorage.getItem("bestFinish");
+
+        if (!best || balls > Number(best)) {
+            localStorage.setItem("bestFinish", balls);
+        }
+    } else {
+        document.getElementById("result").innerText = "GAME OVER! Try Again!";
+    }
+
+    showBest();
+}
+
+function restart() {
+    clearInterval(timer);
+
+    runs = 0;
+    balls = 6;
+    wickets = 0;
+    results = [];
+    active = false;
+
+    document.getElementById("need").innerText = target;
+    document.getElementById("balls").innerText = balls;
+    document.getElementById("wickets").innerText = wickets;
+    document.getElementById("over").innerText = "- - - - - -";
+    document.getElementById("message").innerText = "Press HIT when ball reaches the zone!";
+    document.getElementById("result").innerText = "";
+
+    document.getElementById("ball").style.left = "5%";
+
+    startBall();
+}
+
+function showBest() {
+    let best = localStorage.getItem("bestFinish");
+    document.getElementById("best").innerText =
+        best ? best + " balls left" : "None";
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.code == "Space") {
+        event.preventDefault();
+        hit();
+    }
+});
+
+showBest();
+restart();
+</script>
+
+</body>
+</html>
