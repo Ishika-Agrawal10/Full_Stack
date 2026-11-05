@@ -8,9 +8,7 @@ function managecounter(){
         count--;
         console.log(count);
     }
-    return {
-        increment, decrement
-    };
+    return {increment, decrement};
 }
     let counter=managecounter();
     counter.increment();
